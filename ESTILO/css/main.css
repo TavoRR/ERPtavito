@@ -10,7 +10,7 @@ body {
   	-moz-osx-font-smoothing: grayscale;
 }
 .main-content{
-    overflow: hidden;
+    overflow: hidden !important;
 }
 .header {
 	position: absolute;
