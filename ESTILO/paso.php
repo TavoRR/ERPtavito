@@ -46,8 +46,7 @@
 						 $_SESSION['start'] = time();
 						 $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 
-						 //Manda a la pagina usser para checar el tipo de usuario que es
-						 header ('Location: usser.php?tipo='.$tipo);
+						 header('Location: Admin/index.php');
 					}
 				 }	 
 			 }
