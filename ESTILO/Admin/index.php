@@ -21,7 +21,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pink Boutique ERP</title>
+	<title>Moda y Estilo Cinthya Pineda ERP</title>
        	<!--Estilos-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -36,7 +36,7 @@
 		<!--Header-->
 		<div class="header">
 			<div class="logo">
-				<i class="fa fa-tachometer"></i>
+				
 				<span>Brand</span>
 			</div>
 			<a href="#" class="nav-trigger"><span>cdaa</span></a>
@@ -45,11 +45,13 @@
 		<!--Navbar-->
 		<div class="side-nav">
 			<div class="logo">
-				<i class="fa fa-tachometer"></i>
-				<span>Pink Boutique</span>
+				
+				<span>Moda y Estilo Cinthya Pineda</span>
 			</div>
-			<div class="user-Sidenav">
-				<center><img alt="User" src="img/user.png" ></center>
+			<div class="user-Sidenav"><br><br>
+				<center><img alt="User" src="img/majestic.png" ></center>
+				<br>
+				<br>
 				<span id="user-name"><?php echo $_SESSION['username'] ?></span>
 				<hr>
 			</div>
@@ -110,8 +112,8 @@
 			<div class="main"><br><br>
 				<div class="container">
 					  <div class="jumbotron">
-						<h1>Pink Boutique ERP</h1> 
-						<p>Bienvenido <strong><?php echo $_SESSION['username'] ?></strong> al ERP de Pink Boutique</p> 
+						<h1>Moda y Estilo Cinthya Pineda ERP</h1> 
+						<p>Bienvenido <strong><?php echo $_SESSION['username'] ?></strong> al ERP de Moda y Estilo Cinthya Pineda</p> 
 					  </div>
 
 				</div><br><br><br><br><br><br><br><br><br><br><br>
