@@ -60,38 +60,42 @@
 	
 	
 ?>
-	<div class="header">
+			<div class="header">
 			<div class="logo">
-				<i class="fa fa-tachometer"></i>
+				
 				<span>Brand</span>
 			</div>
 			<a href="#" class="nav-trigger"><span>cdaa</span></a>
 		</div>
+		
+		<!--Navbar-->
 		<div class="side-nav">
 			<div class="logo">
-				<i class="fa fa-tachometer"></i>
-				<span>Pink Boutique</span>
+				
+				<span>Moda y Estilo Cinthya Pineda</span>
 			</div>
-			<div class="user-Sidenav">
-				<center><img alt="User" src="img/user.png" ></center>
+			<div class="user-Sidenav"><br><br>
+				<center><img alt="User" src="img/majestic.png" ></center>
+				<br>
+				<br>
 				<span id="user-name"><?php echo $_SESSION['username'] ?></span>
 				<hr>
 			</div>
 			<nav>
 				<ul>
-					<li >
+					<li class="active">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
 						</a>
 					</li>
-					<li >
-						<a href="inventario.html">
+					<li>
+						<a href="inventario.php?pagina=1">
 							<span><i class="fa fa-clipboard"></i></span>
 							<span>Inventario</span>
 						</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="ventas.php?pagina=1">
 
 							<span><i class="fa fa-credit-card-alt"></i></span>
@@ -99,19 +103,19 @@
 						</a>
 					</li>
 					<li >
-						<a href="envios.html">
+						<a href="envios.php">
 							<span><i class="fa fa-send"></i></span>
 							<span>Envios</span>
 						</a>
 					</li>
 					<li>
-						<a href="usuarios.html">
+						<a href="usuarios.php">
 							<span><i class="fa fa-user"></i></span>
 							<span>Usuarios</span>
 						</a>
 					</li>
 					<li>
-						<a href="reportes.html">
+						<a href="reportes.php">
 							<span><i class="fa fa-book"></i></span>
 							<span>Reportes</span>
 						</a>
@@ -125,6 +129,7 @@
 				</ul>
 			</nav>
 		</div>
+
 		<div class="main-content">
 			<div class="title">
 				Ventas

@@ -46,7 +46,7 @@
 		<div class="side-nav">
 			<div class="logo">
 				<i class="fa fa-tachometer"></i>
-				<span>Pink Boutique</span>
+				<span>Moda y Estilo Cinthya Pineda</span>
 			</div>
 			<div class="user-Sidenav">
 				<center><img alt="User" src="img/user.png" ></center>
