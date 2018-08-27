@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pink Boutique ERP</title>
+	<link rel="stylesheet" href="menu.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		
+		
+		<link rel="stylesheet" href="main.css">
+
+		
+		
+		
+</head>
+<body>
+	<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Brand</span>
+			</div>
+			<a href="#" class="nav-trigger"><span>cdaa</span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Pink Boutique</span>
+			</div>
+			<div class="user-Sidenav">
+				<center><img alt="User" src="img/user.png" ></center>
+				<span id="user-name">Luz <strong>Alcantar</strong></span>
+				<hr>
+			</div>
+			<nav>
+				<ul>
+					<li >
+						<a href="index.html">
+							<span><i class="fa fa-dashboard"></i></span>
+							<span>Inicio</span>
+						</a>
+					</li>
+					<li >
+						<a href="inventario.html">
+							<span><i class="fa fa-clipboard"></i></span>
+							<span>Inventario</span>
+						</a>
+					</li>
+					<li >
+						<a href="ventas.html">
+
+							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span>Ventas</span>
+						</a>
+					</li>
+					<li class="active">
+						<a href="envios.html">
+							<span><i class="fa fa-send"></i></span>
+							<span>Envios</span>
+						</a>
+					</li>
+					<li>
+						<a href="usuarios.html">
+							<span><i class="fa fa-user"></i></span>
+							<span>Usuarios</span>
+						</a>
+					</li>
+					<li>
+						<a href="reportes.html">
+							<span><i class="fa fa-book"></i></span>
+							<span>Reportes</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content">
+			<div class="title">
+				Envios
+			</div>
+			
+			<div class="main">
+				
+					<br><br>
+					
+				<div class="widget">
+					<div class="chart">
+					<h2>Envios</h2>
+					  <p>Buscar envio:</p>  
+					  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+					  
+					<div class="table-responsive">
+					  <table class="table table-hover">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Proveedor de correos</th>
+								<th>Cliente</th>
+								<th>Producto</th>
+								<th>Fecha</th>
+								<th>Monto</th>
+							</tr>
+						</thead>
+						<tbody id="myTable">
+							<tr>
+								<td>1</td>
+								<td>Fedex</td>
+								<td>Sthepanie</td><td>Blusa</td><td>12/12/2018</td>
+								<td>$200.00</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Fedex</td>
+								<td>Samantha</td>
+								<td>Maquillaje</td><td>13/06/2018</td>
+								<td>$103.00</td>
+							</tr><tr>
+								<td>3</td>
+								<td>Fedex</td>
+								<td>Aylin</td>
+								<td>Desmaquillante</td>
+								<td>03/05/2018</td>
+								<td>$250.00</td>
+							</tr><tr>
+								<td>4</td>
+								<td>Fedex</td>
+								<td>Fernanda</td><td>Labial</td><td>06/04/2018</td>
+								<td>$150.00</td>
+							</tr>
+						</tbody>
+					  </table>
+					  <ul class="pager">
+						  <li class="previous"><a href="#">Previous</a></li>
+						  <li class="next"><a href="#">Next</a></li>
+					  </ul>
+					  <div style="text-align: right;">
+					  	<a href="agregar-envio.html" type="button" class="btn btn-success" >Agregar</a>
+					  	<button type="button" class="btn btn-primary disabled">Modificar</button>
+					  	<button type="button" class="btn btn-danger disabled">Eliminar</button><br><br>
+					</div>
+					</div>
+						
+				</div>
+				</div>
+					<br>
+					<br><br><br><br><br><br><br><br><br><br>
+			</div>
+		</div>
+</body>
+</html>
