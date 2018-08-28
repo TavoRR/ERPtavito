@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pink Boutique</title>
+	<title>Moda y Estilo Cinthya Pineda</title>
 </head>
 
 <!--Estilos -->
@@ -79,12 +79,12 @@
 	</div>
 	
 	<!-- Footer -->
-	<footer class="pinkback">
+	<!--<footer class="pinkback">
 	<br>
 		<div class="footer-copyright text-center py-3">© 2018 Copyright:
 			<a href=""> PinkBoutique.com</a>
 		</div>
-	</footer>
+	</footer>-->
 
 </body>
 </html>
