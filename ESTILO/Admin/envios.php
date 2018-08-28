@@ -124,7 +124,7 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Proveedor de correos</th>
+								<th>Agencia de Envios</th>
 								<th>Cliente</th>
 								<th>Producto</th>
 								<th>Fecha</th>
@@ -159,10 +159,6 @@
 							</tr>
 						</tbody>
 					  </table>
-					  <ul class="pager">
-						  <li class="previous"><a href="#">Previous</a></li>
-						  <li class="next"><a href="#">Next</a></li>
-					  </ul>
 					  <div style="text-align: right;">
 					  	<a href="agregar-envio.php" type="button" class="btn btn-success" >Agregar</a>
 					  	<button type="button" class="btn btn-primary disabled">Modificar</button>

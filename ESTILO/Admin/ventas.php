@@ -157,29 +157,29 @@
 								<td>Maquillaje Shido</td>
 								<td>12/12/2018</td>
 								<td>$200.00</td>
+								<th>Tavo</th>
 							</tr>
 							<tr>
 								<td>2</td>
 								<td>Labial<br>Galleta</td>
 								<td>13/06/2018</td>
 								<td>$103.00</td>
+								<th>Daniel</th>
 							</tr><tr>
 								<td>3</td>
 								<td>Blusa</td>
 								<td>03/05/2018</td>
 								<td>$250.00</td>
+								<th>Daniel</th>
 							</tr><tr>
 								<td>4</td>
 								<td>Zapato</td>
 								<td>06/04/2018</td>
 								<td>$150.00</td>
+								<th>Tavo</th>
 							</tr>
 						</tbody>
 					  </table>
-					  <ul class="pager">
-						  <li class="previous"><a href="#">Previo</a></li>
-						  <li class="next"><a href="#">Siguiente</a></li>
-					  </ul>
 					  <div style="text-align: right;">
 					  	<a href="agregar-venta.php" type="button" class="btn btn-success" >Agregar</a>
 					  	
