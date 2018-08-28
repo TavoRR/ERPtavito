@@ -16,7 +16,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pink Boutique ERP</title>
+	<title>Moda y Estilo Cinthya Pineda</title>
 	<link rel="stylesheet" href="menu.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -177,8 +177,8 @@
 						</tbody>
 					  </table>
 					  <ul class="pager">
-						  <li class="previous"><a href="#">Previous</a></li>
-						  <li class="next"><a href="#">Next</a></li>
+						  <li class="previous"><a href="#">Previo</a></li>
+						  <li class="next"><a href="#">Siguiente</a></li>
 					  </ul>
 					  <div style="text-align: right;">
 					  	<a href="agregar-venta.php" type="button" class="btn btn-success" >Agregar</a>

@@ -21,7 +21,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pink Boutique ERP</title>
+	<title>Moda y Estilo Cinthya Pineda</title>
        	<!--Estilos-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -111,8 +111,8 @@
 			<div class="main"><br><br>
 				<div class="container">
 					  <div class="jumbotron">
-						<h1>Pink Boutique ERP</h1> 
-						<p>Bienvenido <strong><?php echo $_SESSION['username'] ?></strong> al ERP de Pink Boutique</p> 
+						<h1>Moda y Estilo Cinthya Pineda</h1> 
+						<p>Bienvenido <strong><?php echo $_SESSION['username'] ?></strong> al ERP de Moda y Estila Cinthya Pineda</p> 
 					  </div>
 				 </div><br><br><br><br><br><br><br><br><br><br><br>
 			</div>

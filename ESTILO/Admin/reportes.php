@@ -16,7 +16,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Pink Boutique ERP</title>
+	<title>Moda y Estilo Cinthya Pineda</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -102,7 +102,8 @@
 					</li>
 				</ul>
 			</nav>
-		</div>		<div class="main-content">
+		</div>		
+		<div class="main-content">
 			<div class="title">
 				Reportes
 			</div>
@@ -110,14 +111,71 @@
 			<div class="main">
 				
 					<br><br>
-					
-				<div class="widget">
-					<div class="title">Reportes</div>
-					<div class="chart">Zona en construccion</div>
+					<div class="widget">
+									<div class="chart">
+					<h2>Reportes</h2>
+					  <p>Buscar Venta:</p>  
+					  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+					  
+					<div class="table-responsive">
+					  <table class="table table-hover">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Productos</th>
+								<th>Fecha</th>
+								<th>Monto</th>
+								<th>Vendedor</th>
+							</tr>
+						</thead>
+						<tbody id="myTable">
+							<tr>
+								<td>1</td>
+								<td>Maquillaje Facial</td>
+								<td>12/12/2018</td>
+								<td>$155.00</td>
+								<td>Cinthya</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Labial<br>Rojo</td>
+								<td>13/06/2018</td>
+								<td>$130.00</td>
+								<td>Rebeca</td>
+							</tr><tr>
+								<td>3</td>
+								<td>Blusa<br>London Roja</td>
+								<td>03/05/2018</td>
+								<td>$299.00</td>
+								<td>Tavo</td>
+							</tr><tr>
+								<td>4</td>
+								<td>Zapato<br>Cerrado</td>
+								<td>06/04/2018</td>
+								<td>$330.00</td>
+								<td>Cinthya</td>
+							</tr>
+						</tbody>
+					  </table>
+					  <ul class="pager">
+						  <li class="previous"><a href="#">Previo</a></li>
+						  <li class="next"><a href="#">Siguiente</a></li>
+					  </ul>
+					</div>
+						
 				</div>
-					<br>
-					<br><br><br><br><br><br><br><br><br><br>
+				</div>
 			</div>
 		</div>
+		<script>
+		$(document).ready(function(){
+		  $("#myInput").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+			  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		  });
+		});
+		</script>
 </body>
 </html>
