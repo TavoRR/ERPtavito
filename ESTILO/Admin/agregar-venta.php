@@ -107,45 +107,97 @@
 			</nav>
 		</div>
 		<!-- Contenido -->
-		<div class="main-content">
+			<div class="main-content">
 			<div class="title">
 				Ventas
 			</div>
 			
-			<div class="main"><br><br>
+			<div class="main">
+				
+					<br><br>
+					
 				<div class="widget">
+				
+				
 					<div class="chart">
-						<h2>Nueva venta</h2><br>
-						<a href="../../Stakk/productos.php" class="btn btn-default">Agregar productos al carrito </a>
-						<!--Formulario-->
+						<h2>Capturar Venta</h2><br>
+						<form method="POST" action="preview-inventario.php" style="margin-left: 8%; margin-right: 40%;">
+							<div class="form-group"><label>Productos: </label>
+								<input class="form-control" name="nombre"><br></div>
+							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"  />
+							<br>
+							<div class="form-group"><label>Monto: </label><input class="form-control" type="number" name="cantidad"  onkeyup="num(this);" onblur='num(this);'><br></div>
+							<div class="form-group"><label>Vendedor: </label><input class="form-control" type="number" step="any" name="precio"><br></div>
+							<div style="text-align: right;">
+							<button type="submit" class="btn btn-success">Generar</button>
+							<a href=" ventas.php?pagina=1" type="button" class="btn btn-danger">Cancelar</a>
+							<br><br>
+						</div>
+                            </div>
+						</form>
 						
+					
+		
+					
+						<?php 
+	/*$sql = "SELECT * FROM productos LIMIT ".$inicio."," . $LIM_PAG;
+	$result = mysqli_query($conn, $sql);*/
+					
+	/*while($row = mysqli_fetch_assoc($result)){
+			if ($row['Tipo']==1){
+				$tipoprodu = "Maquillaje";
+			}
+			else if($row['Tipo']==2){
+				$tipoprodu = "Ropa";
+			}
+			else if($row['Tipo']==3){
+				$tipoprodu = "Zapatos";
+			}
+			echo "<tr><td>" . $row['idProductos'] ."</td><td>" . $row['Nombre'] ."</td> <td>" .$tipoprodu ."</td><td>" . $row['Descripcion'] ."</td> <td>" .$row['Cantidad']."</td><td>" .$row['Precio']. "</td><td><a href='eliminar-inventario.php?registro=" .$row['idProductos'] ."'><img src='img/delete.png' class='icon-in'></a>   <a href='modificar-inventario.php?registro=" .$row['idProductos'] ."'><img src='img/edit.png' class='icon-in'></a></td></tr>";
+			
+		}						
+							*/?>
+							
 						
-					</div>	
+					  <ul class="pagination">
+					 <?php /*
+						  if($total_paginas > 1){
+							if($pagina !=1 )
+								echo '<li class="page-item"><a  class="page-link" href=" inventario.php?pagina='.($pagina-1).'">PREVIEW</a> </li>';
+						  for ($i=1;$i<=$total_paginas;$i++) {
+							 if ($pagina == $i)
+								//si muestro el índice de la página actual, no coloco enlace
+								echo '<li class="page-item active"><a  class="page-link">'.$pagina .'</a> </li> ';
+							 else
+								//si el índice no corresponde con la página mostrada actualmente,
+								//coloco el enlace para ir a esa página
+								echo '<li class="page-item"><a  class="page-link" href=" inventario.php?pagina='.$i.'">'.$i.'</a> </li> ';
+						  }
+						  if ($pagina != $total_paginas)
+							 echo '<li class="page-item"><a  class="page-link" href="inventario.php?pagina='.($pagina+1).'">NEXT</a> </li>';
+
+						}
+						 */ ?>
+						  
+						  
+					  </ul>
+					</div>
+						
+				</div>	
 				</div>
 			</div>
-		</div>
+		
+		
+		
 		<script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-    </script>
-    
-    <script>
-$(document).ready(function(){
-    $('.add-to-cart').click(function(){
-        var id = $(this).closest('tr').find('.product-id').text();
-        var name = $(this).closest('tr').find('.product-name').text();
-        var quantity = $(this).closest('tr').find('input').val();
-        window.location.href = "agregar-carrito.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
-    });
- 
-    $('.update-quantity').click(function(){
-        var id = $(this).closest('tr').find('.product-id').text();
-        var name = $(this).closest('tr').find('.product-name').text();
-        var quantity = $(this).closest('tr').find('input').val();
-        window.location.href = "actualizar.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
-    });
-});
-</script>
+		$(document).ready(function(){
+		  $("#myInput").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+			  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		  });
+		});
+		</script>
 </body>
 </html>

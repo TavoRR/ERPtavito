@@ -121,7 +121,7 @@
 					<div class="chart">
 						<h2>Nuevo Envio</h2><br>
 						<form style="margin-left: 8%; margin-right: 40%;">
-							<div class="form-group"><label>Proveedor de correos:  </label><select class="form-control" id="sel1">
+							<div class="form-group"><label>Agencia de Envios:  </label><select class="form-control" id="sel1">
 								<option>Fedex</option>
 								<option>DHL</option>
 							  </select><br></div>
