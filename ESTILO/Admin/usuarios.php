@@ -29,7 +29,18 @@
 		
 		<link rel="stylesheet" href="../css/main.css">
 
-		
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-dialog.min.css">
+
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap-dialog.min.js"></script>
+		<script src="../js/graficas/highcharts.js"></script>
+		<script src="../js/graficas/exporting.js"></script>
+		<script src="../js/graficas/highcharts-3d.js"></script>
+		<script src="../js/graficas/series-label.js"></script>
+		<script src="../js/graficas/exporting.js"></script>
+		<script src="../js/generales.js"></script>
 		
 		
 </head>
