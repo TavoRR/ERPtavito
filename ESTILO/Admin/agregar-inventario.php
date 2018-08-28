@@ -29,7 +29,13 @@
 		
 		<link rel="stylesheet" href="../css/main.css">
 
-		
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-dialog.min.css">
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-dialog.min.js"></script>
+	<script src="../js/generales.js"></script>
 		
 		
 </head>
@@ -121,7 +127,8 @@
 					<div class="chart">
 						<h2>Agregar producto</h2><br>
 						<form method="POST" action="preview-inventario.php" style="margin-left: 8%; margin-right: 40%;">
-							<div class="form-group"><label>Nombre: </label><input class="form-control" type="text" name="nombre"><br></div>
+							<div class="form-group"><label>Nombre: </label>
+								<input class="form-control" name="nombre"><br></div>
 							<div class="form-group"><label>Tipo: </label><select name="tipo" class="form-control">
 								<option value="1" >Maquillaje</option><option value="2" >Ropa</option><option value="3" >Zapatos</option>
 							</select><br></div>
@@ -147,5 +154,10 @@
 	function num(c){
 	 c.value=/^\d+$/.test(c.value)?c.value:c.value.substr(0,c.value.length-1);
 	}
+
+
+	/*$('input').keypress(function(event){
+	    return validCaracteres(event,this.id);
+	});*/
 </script>
 </html>
