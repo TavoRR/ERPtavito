@@ -165,7 +165,7 @@ function validCaracteres(e,id){
       if(parseFloat($("#"+id).val())<=0){
         $("#"+id).parent().children('.errorPrice').remove();
         texto   =   '<strong class="errorPrice" style="position: absolute;bottom: -25px; color: red; z-index:1000;">El precio debe ser superior a 0.';
-        $("#"+id).parent().append(texto+'</strong>');
+        $("#"+id).parent('div').append(texto+'</strong>');
       }
       else
         $("#"+id).parent().children('.errorPrice').remove();
