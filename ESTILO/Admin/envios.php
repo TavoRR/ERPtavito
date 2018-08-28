@@ -57,7 +57,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li class="">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
@@ -76,7 +76,7 @@
 							<span>Ventas</span>
 						</a>
 					</li>
-					<li >
+					<li class="active" >
 						<a href="envios.php">
 							<span><i class="fa fa-send"></i></span>
 							<span>Envios</span>

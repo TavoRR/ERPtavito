@@ -64,7 +64,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li class="">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
@@ -89,7 +89,7 @@
 							<span>Envios</span>
 						</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="usuarios.php">
 							<span><i class="fa fa-user"></i></span>
 							<span>Usuarios</span>
