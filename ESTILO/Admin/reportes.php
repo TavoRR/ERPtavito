@@ -57,7 +57,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li class="">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
@@ -88,7 +88,7 @@
 							<span>Usuarios</span>
 						</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="reportes.php">
 							<span><i class="fa fa-book"></i></span>
 							<span>Reportes</span>

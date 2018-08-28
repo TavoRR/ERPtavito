@@ -79,7 +79,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li class="">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
@@ -91,7 +91,7 @@
 							<span>Inventario</span>
 						</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="ventas.php?pagina=1">
 
 							<span><i class="fa fa-credit-card-alt"></i></span>
