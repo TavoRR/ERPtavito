@@ -17,7 +17,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Moda y Estilo Cinthya Pineda</title>
-	<link rel="stylesheet" href="menu.css">
+	
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -26,8 +26,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		
-		
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="main.css"> 
 
 		
 		
@@ -108,7 +108,7 @@
 			</nav>
 		</div>			<div class="main-content">
 			<div class="title">
-				Ventas
+				Envio
 			</div>
 			
 			<div class="main">
@@ -119,12 +119,11 @@
 				
 				
 					<div class="chart">
-						<h2>Nueva venta</h2><br>
+						<h2>Nuevo Envio</h2><br>
 						<form style="margin-left: 8%; margin-right: 40%;">
 							<div class="form-group"><label>Proveedor de correos:  </label><select class="form-control" id="sel1">
 								<option>Fedex</option>
 								<option>DHL</option>
-								<option>Repartidor X</option>
 							  </select><br></div>
 							  <div class="form-group"><label>Cliente: </label><input class="form-control" type="text" ><br></div>
 							  <div class="form-group"><label>Productos: (Presiona ctrl para seleccionar varios) </label><select multiple class="form-control" id="sel1">

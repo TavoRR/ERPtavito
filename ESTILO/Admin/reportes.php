@@ -157,10 +157,7 @@
 							</tr>
 						</tbody>
 					  </table>
-					  <ul class="pager">
-						  <li class="previous"><a href="#">Previo</a></li>
-						  <li class="next"><a href="#">Siguiente</a></li>
-					  </ul>
+					  
 					</div>
 						
 				</div>
