@@ -77,13 +77,13 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li class="">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
 						</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="inventario.php?pagina=1">
 							<span><i class="fa fa-clipboard"></i></span>
 							<span>Inventario</span>

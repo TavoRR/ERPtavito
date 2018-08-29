@@ -2,7 +2,7 @@
 
 <?php
 	session_start();
-	include_once 'connection/conection.php';
+	include_once 'Admin/connection/conection.php';
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@
 	<div class="login-form">
 		<div class="main-div">
 			<div class="panel">
-				<h2>Adminitrador</h2>
+				<h2>Admin Login</h2>
 				<p>Error</p>
 			</div>
 			<p>USUARIO/CONTRASEÑA INCORRECTOS</p>
