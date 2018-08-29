@@ -153,7 +153,7 @@
 					  </tr>
 					  <tr>
 					  	<td><strong>Contraseña: </strong></td>
-					  	<td><?php echo $password ?></td>
+					  	<td>*****</td>
 					  </tr>
 					   
 					  </table>

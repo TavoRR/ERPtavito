@@ -138,7 +138,7 @@
 					<div class="chart">
 						<h2>Modificar Usuario</h2><br>
 						<form method="POST" action="preview-usuario-modi.php" style="margin-left: 8%; margin-right: 40%;">
-							<input type="hidden" name="id" value="<?php echo $id ?>">
+							<input type="hidden" name="user" value="<?php echo $idmodi; ?>">
 							<div class="form-group"><label>Nombre: </label><input class="form-control" type="text" name="nombre" value="<?php echo $nombre ?>"><br></div>
 							<div class="form-group"><label>Tipo: </label><select name="tipo" class="form-control">
 								<?php 
@@ -155,7 +155,7 @@
 								?>
 								
 							</select><br></div>
-							<div class="form-group"><label>Contraseña: </label><input class="form-control" type="text" name="password" value="<?php echo $password ?>"><br></div>
+							<div class="form-group"><label>Contraseña: </label><input class="form-control" type="password" name="password" value="<?php echo $password ?>"><br></div>
 							
 							<div style="text-align: right;">
 							<button type="submit" class="btn btn-success">Guardar</button>
