@@ -28,7 +28,13 @@
 		
 		<link rel="stylesheet" href="../css/main.css">
 
-		
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-dialog.min.css">
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-dialog.min.js"></script>
+	<script src="../js/generales.js"></script>
 		
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -60,7 +66,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li class="">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
@@ -72,7 +78,7 @@
 							<span>Inventario</span>
 						</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="ventas.php?pagina=1">
 
 							<span><i class="fa fa-credit-card-alt"></i></span>
@@ -121,24 +127,52 @@
 	input,select,textarea{font-size: 16px !important; height: 30px !important;}
 </style>
 				
+
+<?php 
+	$sql = "SELECT * FROM productos";
+	$result = mysqli_query($conn, $sql);
+					
+							
+?>
+
+
 					<div class="chart">
 						<h2>Nueva Venta</h2><br>
-						<form style="margin-left: 8%; margin-right: 40%;     font-size: 16px;">
-							<div class="form-group"><label>Productos:  </label><select class="form-control" id="sel1">
-								<option>Fedex</option>
-								<option>DHL</option>
-							  </select><br></div>
+						<form style="margin-left: 8%; margin-right: 40%;     font-size: 16px;" method="POST" action="registros/add_venta.php">
+							<input type="hidden" name="product" value="" id="prod">
+							<div class="form-group"><label>Seleccione un producto:  </label><select class="form-control" id="product">
+								
+								<option value="none">- Seleccionar -</option>
+								<?php 
+
+								while($row = mysqli_fetch_assoc($result)){
+									if ($row['Tipo']==1){
+										$tipoprodu = "Maquillaje";
+									}
+									else if($row['Tipo']==2){
+										$tipoprodu = "Ropa";
+									}
+									else if($row['Tipo']==3){
+										$tipoprodu = "Zapatos";
+									}	
+
+									?>
+									<option value="<?= $tipoprodu; ?>"><?= $row['Nombre']; ?></option>
+									<?php
+
+								}
+								 ?>
+								
+							  </select></div>
+							  <div class="form-group"><label>Tipo</label><input class="form-control" id="tipo" disabled> </input></div>
 							 
-							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"/><br>
-                              <div class="form-group"><label>Monto: </label><input class="form-control" type="text" ><br></div>
-							  <div class="form-group"><label>Vendedor</label><select class="form-control" id="sel1">
-								<option>Cinthya</option>
-								<option>Gustavo</option>
-							  </select><br></div>
+							<div class="form-group"><label>Fecha: </label><input name="fecha" class="form-control" id="datepicker"/>
+                              <div class="form-group"><label>Monto: </label><input id="monto" name="monto" type="number" class="form-control" type="text" ></div>
+							  <div class="form-group"><label>Vendedor</label><input name="vendedor" class="vende form-control disabled" id="<?= $_SESSION['iduser']; ?>" value="<?php echo $_SESSION['username'] ?>"> </input></div>
 							<br>
                         </div>
 							<div style="text-align: right;">
-							<button  type="button" class="btn btn-success disabled">Guardar</button>
+							<button type="submit" class="btn btn-success">Guardar</button>
 							<br><br>
 						</div>
 						</form>
@@ -146,50 +180,6 @@
 					</div>	
 						
 					
-		
-					
-						<?php 
-	/*$sql = "SELECT * FROM productos LIMIT ".$inicio."," . $LIM_PAG;
-	$result = mysqli_query($conn, $sql);*/
-					
-	/*while($row = mysqli_fetch_assoc($result)){
-			if ($row['Tipo']==1){
-				$tipoprodu = "Maquillaje";
-			}
-			else if($row['Tipo']==2){
-				$tipoprodu = "Ropa";
-			}
-			else if($row['Tipo']==3){
-				$tipoprodu = "Zapatos";
-			}
-			echo "<tr><td>" . $row['idProductos'] ."</td><td>" . $row['Nombre'] ."</td> <td>" .$tipoprodu ."</td><td>" . $row['Descripcion'] ."</td> <td>" .$row['Cantidad']."</td><td>" .$row['Precio']. "</td><td><a href='eliminar-inventario.php?registro=" .$row['idProductos'] ."'><img src='img/delete.png' class='icon-in'></a>   <a href='modificar-inventario.php?registro=" .$row['idProductos'] ."'><img src='img/edit.png' class='icon-in'></a></td></tr>";
-			
-		}						
-							*/?>
-							
-						
-					  <ul class="pagination">
-					 <?php /*
-						  if($total_paginas > 1){
-							if($pagina !=1 )
-								echo '<li class="page-item"><a  class="page-link" href=" inventario.php?pagina='.($pagina-1).'">PREVIEW</a> </li>';
-						  for ($i=1;$i<=$total_paginas;$i++) {
-							 if ($pagina == $i)
-								//si muestro el índice de la página actual, no coloco enlace
-								echo '<li class="page-item active"><a  class="page-link">'.$pagina .'</a> </li> ';
-							 else
-								//si el índice no corresponde con la página mostrada actualmente,
-								//coloco el enlace para ir a esa página
-								echo '<li class="page-item"><a  class="page-link" href=" inventario.php?pagina='.$i.'">'.$i.'</a> </li> ';
-						  }
-						  if ($pagina != $total_paginas)
-							 echo '<li class="page-item"><a  class="page-link" href="inventario.php?pagina='.($pagina+1).'">NEXT</a> </li>';
-
-						}
-						 */ ?>
-						  
-						  
-					  </ul>
 					</div>
 						
 				</div>	
@@ -206,7 +196,15 @@
 			  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 		  });
+		  var d = new Date();
+		  $('#datepicker').val(`${d.getFullYear()}-${(d.getMonth()+1)}-${d.getDate()}`);
 		});
+
+		$('#product').change(function(){
+			$('#tipo').val($(this).val());
+			$('#prod').val($('#product option:selected').text());
+		});
+
 		</script>
 </body>
 </html>
