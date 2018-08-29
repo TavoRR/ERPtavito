@@ -121,7 +121,7 @@
 							<div class="form-group"><label>Tipo: </label><select name="tipo" class="form-control">
 								<option value="1" >Administrador</option><option value="2" >Cajero</option>
 							</select><br></div>
-							<div class="form-group"><label>Contraseña: </label><input class="form-control" type="text" name="password"><br></div>
+							<div class="form-group"><label>Contraseña: </label><input class="form-control" type="password" name="password"><br></div>
 							<div style="text-align: right;">
 							<button type="submit" class="btn btn-success ">Guardar</button>
 							<a href=" usuarios.php" type="button" class="btn btn-danger">Cancelar</a>
