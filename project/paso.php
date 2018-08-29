@@ -56,13 +56,10 @@
 	<!--Navbar-->
 	<div>
 		<ul>
-			<li><img src="img/logoblanco.png" alt="" id="logo"></li>
-			<li><a class="active" href="#" id="first">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Shop</a></li>
-			<li><a href="#">Contact</a></li>
-			<div class="network"><li ><img src="img/logo-de-facebook.png" alt="" class="social"></li>
-			<li ><img src="img/logo-de-instagram.png" alt="" class="social"></li></div>
+			<li><img src="img/majestic.png" alt="" id="logo"></li>
+			
+			<div class="network" style="color: #e3e3e3;padding-right: 10px;"><h3>Moda y Estilo Cinthya Pineda ERP</h3>
+			<li ></div>
 		</ul>
 	</div>
 	
