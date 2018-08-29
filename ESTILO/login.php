@@ -19,8 +19,7 @@
 	<div>
 	<ul>
 		<li><img src="img/majestic.png" alt="" id="logo"></li>
-		<div class="network"><li ><img src="img/logo-de-facebook.png" alt="" class="social"></li>
-		<li ><img src="img/logo-de-instagram.png" alt="" class="social"></li></div>
+		<div class="network" style="color: #e3e3e3;padding-right: 10px;"><h3>Moda y Estilo Cinthya Pineda ERP</h3></div>
 	</ul>
 	</div>
 	
@@ -29,13 +28,13 @@
 		<div class="main-div">
     		<div class="panel">
     		<br><br><br><br>
-   				<h2>Bienvenido a Moda y Estilo Cinthya Pineda ERP</h2>
-   				<p>Por favor ingresar tu nombre y contraseña</p>
+   				<h2>Bienvenido</h2>
+   				<p>Por favor ingresar tu usuario y contraseña</p>
    			</div>
    			<!--Formulario -->
     		<form id="Login" method="POST" action="paso.php">
         		<div class="form-group">
-					<input type="text" class="form-control" id="inputEmail" placeholder="Nombre" name="nombre">
+					<input type="text" class="form-control" id="inputEmail" placeholder="Usuario" name="nombre">
         		</div>
 
 				<div class="form-group">
