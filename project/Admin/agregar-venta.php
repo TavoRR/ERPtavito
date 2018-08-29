@@ -117,11 +117,13 @@
 					<br><br>
 					
 				<div class="widget">
-				
+<style>
+	input,select,textarea{font-size: 16px !important; height: 30px !important;}
+</style>
 				
 					<div class="chart">
 						<h2>Nueva Venta</h2><br>
-						<form style="margin-left: 8%; margin-right: 40%;">
+						<form style="margin-left: 8%; margin-right: 40%;     font-size: 16px;">
 							<div class="form-group"><label>Productos:  </label><select class="form-control" id="sel1">
 								<option>Fedex</option>
 								<option>DHL</option>
@@ -129,7 +131,7 @@
 							 
 							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"/><br>
                               <div class="form-group"><label>Monto: </label><input class="form-control" type="text" ><br></div>
-							  <div class="form-group"><label>Vendedor</label><select multiple class="form-control" id="sel1">
+							  <div class="form-group"><label>Vendedor</label><select class="form-control" id="sel1">
 								<option>Cinthya</option>
 								<option>Gustavo</option>
 							  </select><br></div>
