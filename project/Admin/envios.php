@@ -171,9 +171,7 @@
 						</tbody>
 					  </table>
 					  <div style="text-align: right;">
-					  	<a href="agregar-envio.php" type="button" class="btn btn-success" >Agregar</a>
-					  	<button type="button" class="btn btn-primary disabled">Modificar</button>
-					  	<button type="button" class="btn btn-danger disabled">Eliminar</button><br><br>
+					  	<a href="agregar-envio.php" type="button" class="add btn btn-success" >Agregar</a>
 					</div>
 					</div>
 						
