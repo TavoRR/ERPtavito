@@ -159,7 +159,7 @@
 					   </tr>
 					  </table>
 					  </div>
-<a href="registros/ventas.php?nombre=<?php echo $nombre ?>&tipo=<?php echo $tipo ?>&descripcion=<?php echo $descripcion ?>&marca=<?php echo $marca ?>&cantidad=<?php echo $cantidad ?>&precio=<?php echo $precio ?>" type="button" class="btn btn-success" >Guardar</a>
+<a href="registros/inventario.php?nombre=<?php echo $nombre ?>&tipo=<?php echo $tipo ?>&descripcion=<?php echo $descripcion ?>&marca=<?php echo $marca ?>&cantidad=<?php echo $cantidad ?>&precio=<?php echo $precio ?>" type="button" class="btn btn-success" >Guardar</a>
 					<a href="ventas.php?pagina=1" type="button" class="btn btn-danger">Cancelar</a>
 					</div>
 					<br>

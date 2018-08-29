@@ -46,7 +46,7 @@
     label: 'OK',
         cssClass: 'btn-default',
         action: function(dialogItself){ 
-        	window.location.replace('http://localhost/erptavito/estilo/Admin/inventario.php?pagina=1'); 
+        	window.location.replace('http://localhost/erptavito/project/Admin/inventario.php?pagina=1'); 
         }
     }];
 
