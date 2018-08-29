@@ -120,21 +120,28 @@
 				
 				
 					<div class="chart">
-						<h2>Capturar Venta</h2><br>
-						<form method="POST" action="preview-inventario.php" style="margin-left: 8%; margin-right: 40%;">
-							<div class="form-group"><label>Productos: </label>
-								<input class="form-control" name="nombre"><br></div>
-							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"  />
+						<h2>Nueva Venta</h2><br>
+						<form style="margin-left: 8%; margin-right: 40%;">
+							<div class="form-group"><label>Productos:  </label><select class="form-control" id="sel1">
+								<option>Fedex</option>
+								<option>DHL</option>
+							  </select><br></div>
+							 
+							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"/><br>
+                              <div class="form-group"><label>Monto: </label><input class="form-control" type="text" ><br></div>
+							  <div class="form-group"><label>Vendedor</label><select multiple class="form-control" id="sel1">
+								<option>Cinthya</option>
+								<option>Gustavo</option>
+							  </select><br></div>
 							<br>
-							<div class="form-group"><label>Monto: </label><input class="form-control" type="number" name="cantidad"  onkeyup="num(this);" onblur='num(this);'><br></div>
-							<div class="form-group"><label>Vendedor: </label><input class="form-control" type="number" step="any" name="precio"><br></div>
+                        </div>
 							<div style="text-align: right;">
-							<button type="submit" class="btn btn-success">Generar</button>
-							<a href=" ventas.php?pagina=1" type="button" class="btn btn-danger">Cancelar</a>
+							<button  type="button" class="btn btn-success disabled">Guardar</button>
 							<br><br>
 						</div>
-                            </div>
 						</form>
+						
+					</div>	
 						
 					
 		
@@ -185,7 +192,7 @@
 						
 				</div>	
 				</div>
-			</div>
+			
 		
 		
 		
