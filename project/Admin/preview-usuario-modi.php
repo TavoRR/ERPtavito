@@ -36,7 +36,7 @@
 <body>
 <?php
 	
-	$sql = "SELECT * FROM usuarios"
+	$sql = "SELECT * FROM usuarios";
 		
 	//Recibir por POST los datos del formulario
 	
