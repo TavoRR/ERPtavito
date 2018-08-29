@@ -2,7 +2,7 @@
 
 <?php
 	session_start();
-	include_once 'connection/conection.php';
+	include_once 'Admin/connection/conection.php';
 ?>
 
 <!DOCTYPE html>
