@@ -40,7 +40,7 @@
 		
 	//Recibir por POST los datos del formulario
 	
-	$id =$_POST["id"];
+	$id =$_POST["user"];
 	$nombre =$_POST["nombre"];
 	$tipo = $_POST["tipo"];
 	$password = $_POST["password"];
@@ -149,7 +149,7 @@
 					  </tr>
 					  <tr>
 					  	<td><strong>Contraseña: </strong></td>
-					  	<td><?php echo $password ?></td>
+					  	<td>*****</td>
 					  </tr>
 					   
 					  </table>

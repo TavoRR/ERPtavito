@@ -14,14 +14,15 @@
 
 	//Recibir por POST los datos del formulario
 	
-	$monto =$_POST["monto"];
+	$monto =(floatval($_POST["monto"]) * floatval($_POST['cant']) );
 	$fecha = $_POST["fecha"];
 	$vende = $_POST["vendedor"];
 	$product = $_POST["product"];
+	$cant = $_POST['cant'];
 	
 	include_once '../connection/conection.php';
 	
-	$sql = "INSERT INTO venta (Monto, Fecha, Vendedor, producto) VALUES ('$monto','$fecha','$vende','$product') ";
+	$sql = "INSERT INTO venta (Monto, Fecha, Vendedor, producto, cantidad) VALUES ('$monto','$fecha','$vende','$product','$cant') ";
 			
 				
 
