@@ -172,7 +172,6 @@
 					  </table>
 					  <div style="text-align: right;">
 					  	<a href="agregar-envio.php" type="button" class="btn btn-success" >Agregar</a>
-					  	<br><br>
 					</div>
 					</div>
 						

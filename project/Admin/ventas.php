@@ -155,7 +155,6 @@
 					  <table class="table table-hover">
 						<thead>
 							<tr>
-								<th>ID</th>
 								<th>Productos</th>
 								<th>Fecha</th>
 								<th>Monto</th>
@@ -163,36 +162,35 @@
 							</tr>
 						</thead>
 						<tbody id="myTable">
-							<tr>
-								<td>1</td>
-								<td>Maquillaje Shido</td>
-								<td>12/12/2018</td>
-								<td>$200.00</td>
-								<th>Tavo</th>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Labial<br>Galleta</td>
-								<td>13/06/2018</td>
-								<td>$103.00</td>
-								<th>Daniel</th>
-							</tr><tr>
-								<td>3</td>
-								<td>Blusa</td>
-								<td>03/05/2018</td>
-								<td>$250.00</td>
-								<th>Daniel</th>
-							</tr><tr>
-								<td>4</td>
-								<td>Zapato</td>
-								<td>06/04/2018</td>
-								<td>$150.00</td>
-								<th>Tavo</th>
-							</tr>
+							<?php 
+
+									$sql = "SELECT * FROM venta";
+									$result = mysqli_query($conn, $sql);
+					
+							
+
+
+
+									while($row = mysqli_fetch_assoc($result)){
+										?>
+										<tr>
+											<td><?= $row['producto']; ?></td>
+											<td><?= $row['Fecha']; ?></td>
+											<td><?= $row['Monto']; ?></td>
+											<td><?= $row['Vendedor']; ?></td>
+										</tr>
+										<?php
+
+									}
+
+
+
+							 ?>
+						
 						</tbody>
 					  </table>
 					  <div style="text-align: right;">
-					  	<a href="agregar-venta.php" type="button" class="btn btn-success" >Agregar</a>
+					  	<a href="agregar-venta.php" type="button" class="add btn btn-success" >Agregar</a>
 					  	
 					</div>  
 					</div>
