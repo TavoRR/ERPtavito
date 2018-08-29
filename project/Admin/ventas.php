@@ -156,8 +156,9 @@
 						<thead>
 							<tr>
 								<th>Productos</th>
+								<th>Cantidad</th>
 								<th>Fecha</th>
-								<th>Monto</th>
+								<th>Total</th>
 								<th>Vendedor</th>
 							</tr>
 						</thead>
@@ -175,8 +176,9 @@
 										?>
 										<tr>
 											<td><?= $row['producto']; ?></td>
+											<td><?= $row['cantidad']; ?></td>
 											<td><?= $row['Fecha']; ?></td>
-											<td><?= $row['Monto']; ?></td>
+											<td>$ <?= $row['Monto']; ?></td>
 											<td><?= $row['Vendedor']; ?></td>
 										</tr>
 										<?php

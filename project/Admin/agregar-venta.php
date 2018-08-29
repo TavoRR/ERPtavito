@@ -157,17 +157,18 @@
 									}	
 
 									?>
-									<option value="<?= $tipoprodu; ?>"><?= $row['Nombre']; ?></option>
+									<option value="<?= $tipoprodu; ?>" cost="<?= $row['Precio']; ?>"><?= $row['Nombre']; ?></option>
 									<?php
 
 								}
 								 ?>
 								
 							  </select></div>
+							  <div class="form-group"><label>Cantidad:</label><input class="form-control" id="cant" type="number" name="cant"> </input></div>
 							  <div class="form-group"><label>Tipo</label><input class="form-control" id="tipo" disabled> </input></div>
 							 
 							<div class="form-group"><label>Fecha: </label><input name="fecha" class="form-control" id="datepicker"/>
-                              <div class="form-group"><label>Monto: </label><input id="monto" name="monto" type="number" class="form-control" type="text" ></div>
+                              <div class="form-group"><label>Costo unitario: </label><input id="monto" name="monto" type="number" class="form-control" type="text" ></div>
 							  <div class="form-group"><label>Vendedor</label><input name="vendedor" class="vende form-control disabled" id="<?= $_SESSION['iduser']; ?>" value="<?php echo $_SESSION['username'] ?>"> </input></div>
 							<br>
                         </div>
@@ -202,6 +203,7 @@
 
 		$('#product').change(function(){
 			$('#tipo').val($(this).val());
+			$('#monto').val($('#product option:selected').attr('cost'));
 			$('#prod').val($('#product option:selected').text());
 		});
 
