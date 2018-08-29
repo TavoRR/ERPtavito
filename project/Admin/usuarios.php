@@ -168,7 +168,7 @@
 					  </table>
 					  
 					  <div style="text-align: right;">
-					  	<a href="agregar-usuario.php" type="button" class="btn btn-success" >Nuevo Usuario</a>
+					  	<a href="agregar-usuario.php" type="button" class="add btn btn-success" >Nuevo Usuario</a>
 					  	<br><br>
 					</div>
 					</div>

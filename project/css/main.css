@@ -1,3 +1,6 @@
+.add{position: absolute;
+    top: 5%;
+    right: 20px;}
 * {
 	box-sizing: border-box;
 }

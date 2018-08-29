@@ -205,7 +205,7 @@
 						  
 					  </ul>
 					  <div style="text-align: right;">
-					  	<a href="agregar-inventario.php" type="button" class="btn btn-success" >Agregar</a><br><br>
+					  	<a href="agregar-inventario.php" type="button" class="add btn btn-success" >Agregar</a><br><br>
 					</div>
 					</div>
 						
