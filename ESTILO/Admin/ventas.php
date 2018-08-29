@@ -194,7 +194,7 @@
 					  <div style="text-align: right;">
 					  	<a href="agregar-venta.php" type="button" class="btn btn-success" >Agregar</a>
 					  	
-					</div>
+					</div>  
 					</div>
 						
 				</div>

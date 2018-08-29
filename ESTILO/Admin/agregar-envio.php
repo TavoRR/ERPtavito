@@ -106,7 +106,9 @@
 					</li>
 				</ul>
 			</nav>
-		</div>			<div class="main-content">
+		</div>			
+		
+		<div class="main-content">
 			<div class="title">
 				Envio
 			</div>
@@ -121,7 +123,7 @@
 					<div class="chart">
 						<h2>Nuevo Envio</h2><br>
 						<form style="margin-left: 8%; margin-right: 40%;">
-							<div class="form-group"><label>Proveedor de correos:  </label><select class="form-control" id="sel1">
+							<div class="form-group"><label>Agencia de Envios:  </label><select class="form-control" id="sel1">
 								<option>Fedex</option>
 								<option>DHL</option>
 							  </select><br></div>
@@ -135,7 +137,8 @@
 							
 							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"  />
     
-<br></div>
+                        <br>
+                        </div>
 							<div class="form-group"><label>Monto: </label><input class="form-control" type="text" disabled><br></div>
 							<div style="text-align: right;">
 							<button type="button" class="btn btn-success disabled">Guardar</button>

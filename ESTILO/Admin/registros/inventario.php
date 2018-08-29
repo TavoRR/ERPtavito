@@ -53,12 +53,12 @@
 <?php
 	if ($conn->query($sql) === TRUE){
 ?>
-		modal('success','wide','prueba','<b>Los datos se han guardado con exito</b>',false);
+		modal('success','wide','Inventario','<b>Los datos se han guardado con exito</b>',false);
 <?php
 }
 	else{
 ?>
-		modal('danger','wide','prueba','<b>Error al guardar " . $conn->error.</b>',false);
+		modal('danger','wide','Inventario','<b>Error al guardar " . $conn->error.</b>',false);
 <?php 
 } ?>
 </script>

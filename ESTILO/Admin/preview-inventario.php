@@ -142,33 +142,25 @@
 				$tipoprodu = "Zapatos";
 			}?>
 					  <tr>
-					  	<td><strong>Nombre:</strong></td>
+					  	<td><strong>Producto:</strong></td>
 					  	<td><?php echo $nombre ?></td>
 					  </tr>
 					  <tr>
-					  	<td><strong>Tipo: </strong> </td>
+					  	<td><strong>Fecha: </strong> </td>
 					  	<td> <?php echo $tipoprodu ?></td>
 					  </tr>
 					  <tr>
-					  	<td><strong>Descripcion: </strong></td>
+					  	<td><strong>Monto: </strong></td>
 					  	<td><?php echo $descripcion ?></td>
 					  </tr>
 					   <tr>
-					   	<td><strong>Marca: </strong></td>
+					   	<td><strong>Vendedor: </strong></td>
 					   	<td><?php echo $marca ?></td>
-					   </tr>
-					   <tr>
-					   	<td><strong>Cantidad: </strong></td>
-					   	<td><?php echo $cantidad ?></td>
-					   </tr>
-					   <tr>
-					   	<td><strong>Precio: </strong></td>
-					   	<td><?php echo "$ " .$precio  ?></td>
 					   </tr>
 					  </table>
 					  </div>
-<a href="registros/inventario.php?nombre=<?php echo $nombre ?>&tipo=<?php echo $tipo ?>&descripcion=<?php echo $descripcion ?>&marca=<?php echo $marca ?>&cantidad=<?php echo $cantidad ?>&precio=<?php echo $precio ?>" type="button" class="btn btn-success" >Guardar</a>
-					<a href="inventario.php?pagina=1" type="button" class="btn btn-danger">Cancelar</a>
+<a href="registros/ventas.php?nombre=<?php echo $nombre ?>&tipo=<?php echo $tipo ?>&descripcion=<?php echo $descripcion ?>&marca=<?php echo $marca ?>&cantidad=<?php echo $cantidad ?>&precio=<?php echo $precio ?>" type="button" class="btn btn-success" >Guardar</a>
+					<a href="ventas.php?pagina=1" type="button" class="btn btn-danger">Cancelar</a>
 					</div>
 					<br>
 					<br><br><br><br><br><br><br><br><br><br>

@@ -121,7 +121,7 @@
 			</div>
 			
 			<div class="main"><br><br>
-				<div class="container">
+				<div class="container"><br><br><br><br><br><br><br><br><br><br>
 					  <div class="jumbotron">
 						<h1>Moda y Estilo Cinthya Pineda ERP</h1> 
 						<p>Bienvenido <strong><?php echo $_SESSION['username'] ?></strong> al ERP de Moda y Estilo Cinthya Pineda</p> 
