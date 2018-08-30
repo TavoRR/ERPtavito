@@ -19,6 +19,7 @@
 	$vende = $_POST["vendedor"];
 	$product = $_POST["product"];
 	$cant = $_POST['cant'];
+	$idpro = $_POST['idp'];
 	
 	include_once '../connection/conection.php';
 	
@@ -50,16 +51,17 @@
         	window.location.replace('http://localhost/erptavito/project/Admin/ventas.php?pagina=1'); 
         }
     }];
-
+alert("UPDATE productos set Cantidad = Cantidad - <?= $cant ?> where idProductos = <?= $idpro ?>");
 <?php
 	if ($conn->query($sql) === TRUE){
+		$sql = "UPDATE productos set Cantidad = Cantidad - $cant where idProductos = $idpro";
+		if ($conn->query($sql) === TRUE){
 ?>
-		modal('success','wide','Venta','<b>Se realizo la venta exitosamente</b>',false);
-<?php
-}
-	else{
+			modal('success','wide','Venta','<b>Se realizo la venta exitosamente</b>',false);
+<?php	}
+		else{
 ?>
-		modal('danger','wide','Venta','<b>Error al registrar la venta </b>',false);
-	<?php } ?>
+			modal('danger','wide','Venta','<b>Error al registrar la venta </b>',false);
+	<?php }	} ?>
 </script>
 </html>

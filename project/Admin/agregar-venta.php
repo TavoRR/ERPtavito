@@ -140,6 +140,7 @@
 						<h2>Nueva Venta</h2><br>
 						<form style="margin-left: 8%; margin-right: 40%;     font-size: 16px;" method="POST" action="registros/add_venta.php">
 							<input type="hidden" name="product" value="" id="prod">
+							<input type="hidden" name="idp" value="" id="idp">
 							<div class="form-group"><label>Seleccione un producto:  </label><select class="form-control" id="product">
 								
 								<option value="none">- Seleccionar -</option>
@@ -157,7 +158,7 @@
 									}	
 
 									?>
-									<option value="<?= $tipoprodu; ?>" cost="<?= $row['Precio']; ?>"><?= $row['Nombre']; ?></option>
+									<option value="<?= $tipoprodu; ?>" idp="<?= $row['idProductos']; ?>" cost="<?= $row['Precio']; ?>"><?= $row['Nombre']; ?></option>
 									<?php
 
 								}
@@ -204,7 +205,9 @@
 		$('#product').change(function(){
 			$('#tipo').val($(this).val());
 			$('#monto').val($('#product option:selected').attr('cost'));
+			$('#idp').val($('#product option:selected').attr('idp'));
 			$('#prod').val($('#product option:selected').text());
+			alert($('#idp').val());
 		});
 
 		</script>
