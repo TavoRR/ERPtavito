@@ -38,13 +38,19 @@ DROP TABLE IF EXISTS `envios`;
 
 CREATE TABLE `envios` (
   `idEnvios` int(11) NOT NULL AUTO_INCREMENT,
-  `ProveedorCorreos` varchar(45) DEFAULT NULL,
-  `Cliente` varchar(45) DEFAULT NULL,
-  `Fecha` date DEFAULT NULL,
+  `producto` varchar(45) DEFAULT NULL,
+  `agencia` varchar(45) DEFAULT NULL,
+  `cliente` text,
+  `fecha` date DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
   PRIMARY KEY (`idEnvios`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `envios` */
+
+insert  into `envios`(`idEnvios`,`producto`,`agencia`,`cliente`,`fecha`,`monto`,`cantidad`) values 
+(1,'asd','DHL','sdasasdas','2018-08-29',123,2);
 
 /*Table structure for table `envios_has_productos` */
 

@@ -39,9 +39,6 @@
 		<script src="../js/graficas/highcharts-3d.js"></script>
 		<script src="../js/graficas/series-label.js"></script>
 		<script src="../js/graficas/exporting.js"></script>
-
-		<script src="../js/jquery.dataTables.min.js"></script>
-		<script src="../js/dataTables.bootstrap.min.js"></script>
 		<script src="../js/generales.js"></script>
 		
 		
@@ -90,7 +87,7 @@
 							<span>Ventas</span>
 						</a>
 					</li>
-					<li >
+					<li class="active" >
 						<a href="envios.php">
 							<span><i class="fa fa-send"></i></span>
 							<span>Envios</span>
@@ -102,7 +99,7 @@
 							<span>Usuarios</span>
 						</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="reportes.php">
 							<span><i class="fa fa-book"></i></span>
 							<span>Reportes</span>
@@ -116,116 +113,73 @@
 					</li>
 				</ul>
 			</nav>
-		</div>		
+		</div>
+
 		<div class="main-content">
 			<div class="title">
-				Reportes
+				Envios
 			</div>
 			
-<?php $totalV=$totalE=0; ?>
-
 			<div class="main">
-				<div class="col-xs-6">
-					<div class="widget">
-						<div class="chart">
-						<h2>Ventas</h2>
-						  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
-						  
-						<div class="table-responsive">
-						  <table id="ventasTB" class="table table-hover">
-							<thead>
-								<tr>
-									<th>Productos</th>
-									<th>Fecha</th>
-									<th>Monto</th>
-								</tr>
-							</thead>
-							<tbody id="myTable">
-								<?php 
-									$sql = "SELECT * FROM venta";
-									$result = mysqli_query($conn, $sql);
-									while($row = mysqli_fetch_assoc($result)){
-										?>
-										<tr>
-											<td><?= $row['producto']; ?></td>
-											<td><?= $row['Fecha']; ?></td>
-											<td>$ <?= $row['Monto']; ?></td>
-										</tr>
-										<?php
-										$totalV++;
-									}
-							 ?>
-							</tbody>
-						  </table>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6">
-					<div class="widget">
-						<div class="chart">
-						<h2>Envios</h2>
-						  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
-						  
-						<div class="table-responsive">
-						  <table id="enviosTB" class="table table-hover">
-							<thead>
-								<tr>
-									<th>Productos</th>
-									<th>Fecha</th>
-									<th>Monto</th>
-								</tr>
-							</thead>
-							<tbody id="myTable">
-								<?php 
-									$sql = "SELECT * FROM envios";
-									$result = mysqli_query($conn, $sql);
-									while($row = mysqli_fetch_assoc($result)){
-										?>
-										<tr>
-											<td><?= $row['producto']; ?></td>
-											<td><?= $row['fecha']; ?></td>
-											<td>$ <?= $row['monto']; ?></td>
-										</tr>
-										<?php
-										$totalE++;
-									}
-							 ?>
-							</tbody>
-						  </table>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12">
-					<hr>
-					<div id="grafica"></div>
-				</div>
+				
+					<br><br>
 					
+				<div class="widget">
+					<div class="chart">
+					<h2>Envios</h2>
+					  <p>Buscar envio:</p>  
+					  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+					  
+					<div class="table-responsive">
+					  <table class="table table-hover">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Agencia de Envios</th>
+								<th>Cliente</th>
+								<th>Producto</th>
+								<th>Fecha</th>
+								<th>Monto</th>
+							</tr>
+						</thead>
+						<tbody id="myTable">
+							<tr>
+								<td>1</td>
+								<td>Fedex</td>
+								<td>Sthepanie</td><td>Blusa</td><td>12/12/2018</td>
+								<td>$200.00</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Fedex</td>
+								<td>Samantha</td>
+								<td>Maquillaje</td><td>13/06/2018</td>
+								<td>$103.00</td>
+							</tr><tr>
+								<td>3</td>
+								<td>Fedex</td>
+								<td>Aylin</td>
+								<td>Desmaquillante</td>
+								<td>03/05/2018</td>
+								<td>$250.00</td>
+							</tr><tr>
+								<td>4</td>
+								<td>Fedex</td>
+								<td>Fernanda</td><td>Labial</td><td>06/04/2018</td>
+								<td>$150.00</td>
+							</tr>
+						</tbody>
+					  </table>
+					  <div style="text-align: right;">
+					  	<a href="agregar-envio.php" type="button" class="add btn btn-success" >Agregar</a>
+					</div>
+					</div>
+						
+				</div>
+				</div>
+					<br>
+					<br><br><br><br><br><br><br><br><br><br>
 			</div>
 		</div>
-		<script>
-		$(document).ready(function(){
-			insertarPaginado('ventasTB',5);
-			insertarPaginado('enviosTB',5);
-			var data = [{
-				'name': 'Ventas',
-				'y': <?= $totalV ?>,
-				'color'	: '#338e7a'},
-				{'name': 'Envios',
-				'y': <?= $totalE ?>,
-				'color'	: '#89c517'}
-			]
-			Gpastel('cantidad',data,'Ventas vs Envios','grafica');
-
-
-		  $("#myInput").on("keyup", function() {
-			var value = $(this).val().toLowerCase();
-			$("#myTable tr").filter(function() {
-			  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-			});
-		  });
-		});
-		</script>
 </body>
 </html>

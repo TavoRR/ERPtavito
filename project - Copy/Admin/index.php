@@ -1,3 +1,4 @@
+<!--Pagina index de Administrador-->
 <?php
 	session_start();
 	include_once 'connection/conection.php';
@@ -16,16 +17,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Moda y Estilo Cinthya Pineda</title>
+	<title>Moda y Estilo Cinthya Pineda ERP</title>
+       	<!--Estilos-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-		
-		
 		<link rel="stylesheet" href="../css/main.css">
 
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -39,16 +38,14 @@
 		<script src="../js/graficas/highcharts-3d.js"></script>
 		<script src="../js/graficas/series-label.js"></script>
 		<script src="../js/graficas/exporting.js"></script>
-
-		<script src="../js/jquery.dataTables.min.js"></script>
-		<script src="../js/dataTables.bootstrap.min.js"></script>
 		<script src="../js/generales.js"></script>
-		
-		
 </head>
 
+
+
 <body>
-			<div class="header">
+		<!--Header-->
+		<div class="header">
 			<div class="logo">
 				
 				<span>Brand</span>
@@ -71,7 +68,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="">
+					<li class="active">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
@@ -102,7 +99,7 @@
 							<span>Usuarios</span>
 						</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="reportes.php">
 							<span><i class="fa fa-book"></i></span>
 							<span>Reportes</span>
@@ -116,116 +113,26 @@
 					</li>
 				</ul>
 			</nav>
-		</div>		
+		</div>
+		<!--Escritorio-->
 		<div class="main-content">
 			<div class="title">
-				Reportes
+				Escritorio
 			</div>
 			
-<?php $totalV=$totalE=0; ?>
+			<div class="main"><br><br>
+				<div class="container">
+					  <div class="jumbotron">
+						<h1>Moda y Estilo Cinthya Pineda ERP</h1> 
+						<p>Bienvenido <strong><?php echo $_SESSION['username'] ?></strong> al ERP de Moda y Estilo Cinthya Pineda</p> 
+					  </div>
 
-			<div class="main">
-				<div class="col-xs-6">
-					<div class="widget">
-						<div class="chart">
-						<h2>Ventas</h2>
-						  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
-						  
-						<div class="table-responsive">
-						  <table id="ventasTB" class="table table-hover">
-							<thead>
-								<tr>
-									<th>Productos</th>
-									<th>Fecha</th>
-									<th>Monto</th>
-								</tr>
-							</thead>
-							<tbody id="myTable">
-								<?php 
-									$sql = "SELECT * FROM venta";
-									$result = mysqli_query($conn, $sql);
-									while($row = mysqli_fetch_assoc($result)){
-										?>
-										<tr>
-											<td><?= $row['producto']; ?></td>
-											<td><?= $row['Fecha']; ?></td>
-											<td>$ <?= $row['Monto']; ?></td>
-										</tr>
-										<?php
-										$totalV++;
-									}
-							 ?>
-							</tbody>
-						  </table>
-						</div>
-						</div>
-					</div>
 				</div>
-				<div class="col-xs-6">
-					<div class="widget">
-						<div class="chart">
-						<h2>Envios</h2>
-						  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
-						  
-						<div class="table-responsive">
-						  <table id="enviosTB" class="table table-hover">
-							<thead>
-								<tr>
-									<th>Productos</th>
-									<th>Fecha</th>
-									<th>Monto</th>
-								</tr>
-							</thead>
-							<tbody id="myTable">
-								<?php 
-									$sql = "SELECT * FROM envios";
-									$result = mysqli_query($conn, $sql);
-									while($row = mysqli_fetch_assoc($result)){
-										?>
-										<tr>
-											<td><?= $row['producto']; ?></td>
-											<td><?= $row['fecha']; ?></td>
-											<td>$ <?= $row['monto']; ?></td>
-										</tr>
-										<?php
-										$totalE++;
-									}
-							 ?>
-							</tbody>
-						  </table>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12">
-					<hr>
-					<div id="grafica"></div>
-				</div>
-					
 			</div>
 		</div>
-		<script>
-		$(document).ready(function(){
-			insertarPaginado('ventasTB',5);
-			insertarPaginado('enviosTB',5);
-			var data = [{
-				'name': 'Ventas',
-				'y': <?= $totalV ?>,
-				'color'	: '#338e7a'},
-				{'name': 'Envios',
-				'y': <?= $totalE ?>,
-				'color'	: '#89c517'}
-			]
-			Gpastel('cantidad',data,'Ventas vs Envios','grafica');
-
-
-		  $("#myInput").on("keyup", function() {
-			var value = $(this).val().toLowerCase();
-			$("#myTable tr").filter(function() {
-			  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-			});
-		  });
-		});
-		</script>
+		
 </body>
+<script>
+	//modal('default','large','prueba','<a>asd</a>',true);
+</script>
 </html>
