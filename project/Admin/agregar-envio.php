@@ -61,7 +61,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li class="">
 						<a href="index.php">
 							<span><i class="fa fa-dashboard"></i></span>
 							<span>Inicio</span>
@@ -80,7 +80,7 @@
 							<span>Ventas</span>
 						</a>
 					</li>
-					<li >
+					<li class="active">
 						<a href="envios.php">
 							<span><i class="fa fa-send"></i></span>
 							<span>Envios</span>
@@ -108,6 +108,17 @@
 			</nav>
 		</div>			
 		
+
+		<style>
+	input,select,textarea{font-size: 16px !important; height: 30px !important;}
+	.main-content{font-size: 16px;}
+</style>
+<?php 
+	$sql = "SELECT * FROM productos";
+	$result = mysqli_query($conn, $sql);
+					
+							
+?>
 		<div class="main-content">
 			<div class="title">
 				Envio
@@ -126,20 +137,36 @@
 							<div class="form-group"><label>Agencia de Envios:  </label><select class="form-control" id="sel1">
 								<option>Fedex</option>
 								<option>DHL</option>
-							  </select><br></div>
-							  <div class="form-group"><label>Cliente: </label><input class="form-control" type="text" ><br></div>
-							  <div class="form-group"><label>Productos: (Presiona ctrl para seleccionar varios) </label><select multiple class="form-control" id="sel1">
-								<option>Maquillaje shido</option>
-								<option>Labial</option>
-								<option>Blusa</option>
-								<option>Zapato</option>
-							  </select><br></div>
+							  </select></div>
+							  <div class="form-group"><label>Cliente: </label><input class="form-control" type="text" ></div>
+							<div class="form-group"><label>Seleccione un producto:  </label><select class="form-control" id="product">
+								
+								<option value="none">- Seleccionar -</option>
+								<?php 
+
+								while($row = mysqli_fetch_assoc($result)){
+									if ($row['Tipo']==1){
+										$tipoprodu = "Maquillaje";
+									}
+									else if($row['Tipo']==2){
+										$tipoprodu = "Ropa";
+									}
+									else if($row['Tipo']==3){
+										$tipoprodu = "Zapatos";
+									}	
+
+									?>
+									<option value="<?= $tipoprodu; ?>" idp="<?= $row['idProductos']; ?>" cost="<?= $row['Precio']; ?>"><?= $row['Nombre']; ?></option>
+									<?php
+
+								}
+								 ?>
+								
+							  </select></div>
 							
 							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"  />
-    
-                        <br>
                         </div>
-							<div class="form-group"><label>Monto: </label><input class="form-control" type="text" disabled><br></div>
+							<div class="form-group"><label>Monto: </label><input class="form-control" type="text" disabled></div>
 							<div style="text-align: right;">
 							<button type="button" class="btn btn-success disabled">Guardar</button>
 							<br><br>
