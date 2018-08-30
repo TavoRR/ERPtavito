@@ -39,15 +39,30 @@
 		<script src="../js/graficas/highcharts-3d.js"></script>
 		<script src="../js/graficas/series-label.js"></script>
 		<script src="../js/graficas/exporting.js"></script>
-
-		<script src="../js/jquery.dataTables.min.js"></script>
-		<script src="../js/dataTables.bootstrap.min.js"></script>
 		<script src="../js/generales.js"></script>
 		
 		
 </head>
-
 <body>
+<?php
+	$sql = "SELECT * FROM productos";
+	$result = mysqli_query($conn, $sql);
+	$resultCheck =  mysqli_num_rows($result);
+	
+	//Paginacion
+	$LIM_PAG=10;
+	
+	$pagina =$_GET["pagina"];
+	if(!$pagina){
+		$inicio = 0 ;
+		$pagina = 1 ;
+	}
+	else{
+		$inicio = ($pagina - 1)* $LIM_PAG;
+	}
+	
+	$total_paginas = ceil($resultCheck / $LIM_PAG);
+?>
 			<div class="header">
 			<div class="logo">
 				
@@ -77,7 +92,7 @@
 							<span>Inicio</span>
 						</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="inventario.php?pagina=1">
 							<span><i class="fa fa-clipboard"></i></span>
 							<span>Inventario</span>
@@ -102,7 +117,7 @@
 							<span>Usuarios</span>
 						</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="reportes.php">
 							<span><i class="fa fa-book"></i></span>
 							<span>Reportes</span>
@@ -116,109 +131,92 @@
 					</li>
 				</ul>
 			</nav>
-		</div>		
-		<div class="main-content">
+		</div>
+	<div class="main-content">
 			<div class="title">
-				Reportes
+				Inventario
 			</div>
 			
-<?php $totalV=$totalE=0; ?>
-
 			<div class="main">
-				<div class="col-xs-6">
-					<div class="widget">
-						<div class="chart">
-						<h2>Ventas</h2>
-						  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
-						  
-						<div class="table-responsive">
-						  <table id="ventasTB" class="table table-hover">
-							<thead>
-								<tr>
-									<th>Productos</th>
-									<th>Fecha</th>
-									<th>Monto</th>
-								</tr>
-							</thead>
-							<tbody id="myTable">
-								<?php 
-									$sql = "SELECT * FROM venta";
-									$result = mysqli_query($conn, $sql);
-									while($row = mysqli_fetch_assoc($result)){
-										?>
-										<tr>
-											<td><?= $row['producto']; ?></td>
-											<td><?= $row['Fecha']; ?></td>
-											<td>$ <?= $row['Monto']; ?></td>
-										</tr>
-										<?php
-										$totalV++;
-									}
-							 ?>
-							</tbody>
-						  </table>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6">
-					<div class="widget">
-						<div class="chart">
-						<h2>Envios</h2>
-						  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
-						  
-						<div class="table-responsive">
-						  <table id="enviosTB" class="table table-hover">
-							<thead>
-								<tr>
-									<th>Productos</th>
-									<th>Fecha</th>
-									<th>Monto</th>
-								</tr>
-							</thead>
-							<tbody id="myTable">
-								<?php 
-									$sql = "SELECT * FROM envios";
-									$result = mysqli_query($conn, $sql);
-									while($row = mysqli_fetch_assoc($result)){
-										?>
-										<tr>
-											<td><?= $row['producto']; ?></td>
-											<td><?= $row['fecha']; ?></td>
-											<td>$ <?= $row['monto']; ?></td>
-										</tr>
-										<?php
-										$totalE++;
-									}
-							 ?>
-							</tbody>
-						  </table>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12">
-					<hr>
-					<div id="grafica"></div>
-				</div>
+				
+					<br><br>
 					
+				<div class="widget">
+				
+				
+					<div class="chart">
+					<h2>Inventario</h2>
+					  <p>Buscar Productos:</p>  
+					  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+					  
+					<div class="table-responsive">
+					  <table class="table table-hover">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Producto</th>
+								<th>Tipo</th><th>Descripcion</th><th>Existencias</th>
+								<th>Precio</th>
+								<th>   </th>
+							</tr>
+						</thead>
+						<tbody id="myTable">
+						<?php 
+	$sql = "SELECT * FROM productos LIMIT ".$inicio."," . $LIM_PAG;
+	$result = mysqli_query($conn, $sql);
+					
+	while($row = mysqli_fetch_assoc($result)){
+			if ($row['Tipo']==1){
+				$tipoprodu = "Maquillaje";
+			}
+			else if($row['Tipo']==2){
+				$tipoprodu = "Ropa";
+			}
+			else if($row['Tipo']==3){
+				$tipoprodu = "Zapatos";
+			}
+			echo "<tr><td>" . $row['idProductos'] ."</td><td>" . $row['Nombre'] ."</td> <td>" .$tipoprodu ."</td><td>" . $row['Descripcion'] ."</td> <td>" .$row['Cantidad']."</td><td>" .$row['Precio']. "</td><td><a href='eliminar-inventario.php?registro=" .$row['idProductos'] ."'><img src='img/delete.png' class='icon-in'></a>   <a href='modificar-inventario.php?registro=" .$row['idProductos'] ."'><img src='img/edit.png' class='icon-in'></a></td></tr>";
+			
+		}						
+							?>
+							
+						</tbody>
+					  </table>
+					  <ul class="pagination">
+					  <?php 
+						  if($total_paginas > 1){
+							if($pagina !=1 )
+								echo '<li class="page-item"><a  class="page-link" href=" inventario.php?pagina='.($pagina-1).'">PREVIEW</a> </li>';
+						  for ($i=1;$i<=$total_paginas;$i++) {
+							 if ($pagina == $i)
+								//si muestro el índice de la página actual, no coloco enlace
+								echo '<li class="page-item active"><a  class="page-link">'.$pagina .'</a> </li> ';
+							 else
+								//si el índice no corresponde con la página mostrada actualmente,
+								//coloco el enlace para ir a esa página
+								echo '<li class="page-item"><a  class="page-link" href=" inventario.php?pagina='.$i.'">'.$i.'</a> </li> ';
+						  }
+						  if ($pagina != $total_paginas)
+							 echo '<li class="page-item"><a  class="page-link" href="inventario.php?pagina='.($pagina+1).'">NEXT</a> </li>';
+
+						}
+						  ?>
+						  
+						  
+					  </ul>
+					  <div style="text-align: right;">
+					  	<a href="agregar-inventario.php" type="button" class="add btn btn-success" >Agregar</a><br><br>
+					</div>
+					</div>
+						
+				</div>	
+				</div>
 			</div>
 		</div>
+		
+		
 		<script>
 		$(document).ready(function(){
-			insertarPaginado('ventasTB',5);
-			insertarPaginado('enviosTB',5);
-			var data = [{
-				'name': 'Ventas',
-				'y': <?= $totalV ?>,
-				'color'	: '#338e7a'},
-				{'name': 'Envios',
-				'y': <?= $totalE ?>,
-				'color'	: '#89c517'}
-			]
-			Gpastel('cantidad',data,'Ventas vs Envios','grafica');
-
-
 		  $("#myInput").on("keyup", function() {
 			var value = $(this).val().toLowerCase();
 			$("#myTable tr").filter(function() {

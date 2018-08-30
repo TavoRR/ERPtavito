@@ -2,8 +2,7 @@
 
 $dbServername = "localhost";
 $dbUserName = "root";
-$dbPassword = "";
-#$dbPassword = "cinthya";
+$dbPassword = "cinthya";
 
 $dbName = "pinkboutique";
 
