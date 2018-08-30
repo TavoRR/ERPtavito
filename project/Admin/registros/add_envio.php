@@ -52,7 +52,6 @@
         	window.location.replace('http://localhost/erptavito/project/Admin/envios.php?pagina=1'); 
         }
     }];
-alert("UPDATE productos set Cantidad = Cantidad - <?= $cant ?> where idProductos = <?= $idpro ?>");
 <?php
 	if ($conn->query($sql) === TRUE){
 		$sql = "UPDATE productos set Cantidad = Cantidad - $cant where idProductos = $idpro";
