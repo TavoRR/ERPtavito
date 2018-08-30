@@ -134,12 +134,13 @@
 					<div class="chart">
 						<h2>Nuevo Envio</h2><br>
 						<form style="margin-left: 8%; margin-right: 40%;" method="POST" action="registros/add_envio.php">
-							<div class="form-group"><label>Agencia de Envios:  </label><select class="form-control" id="sel1">
+							<div class="form-group"><label>Agencia de Envios:  </label><select class="form-control" id="agencia">
 								<option>Fedex</option>
 								<option>DHL</option>
 							  </select></div>
 							  <div class="form-group"><label>Cliente: </label><input class="form-control" type="text" name="cliente"></div>
 							  <input type="hidden" name="product" value="" id="prod">
+							  <input type="hidden" name="agencia" value="Fedex" id="ag">
 							<input type="hidden" name="idp" value="" id="idp">
 							<div class="form-group"><label>Seleccione un producto:  </label><select class="form-control" id="product" name="product">
 								
@@ -185,6 +186,14 @@
             uiLibrary: 'bootstrap4'
         });
 
+        $('#agencia').change(function(){
+        	$('#ag').val($('#agencia option:selected').text());
+        });
+
+        $('#datepicker').change(function(){
+        	var d = new Date($('#datepicker').val());
+        		$('#datepicker').val(`${d.getFullYear()}-${(d.getMonth()+1)}-${d.getDate()}`);
+        });
 
         $('#product').change(function(){
 			$('#monto').val($('#product option:selected').attr('cost'));
