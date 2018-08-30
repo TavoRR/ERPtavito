@@ -134,44 +134,35 @@
 					  <table class="table table-hover">
 						<thead>
 							<tr>
-								<th>ID</th>
 								<th>Agencia de Envios</th>
 								<th>Cliente</th>
 								<th>Producto</th>
+								<th>Cantidad</th>
 								<th>Fecha</th>
-								<th>Monto</th>
+								<th>Total</th>
 							</tr>
 						</thead>
 						<tbody id="myTable">
-							<tr>
-								<td>1</td>
-								<td>Fedex</td>
-								<td>Sthepanie</td><td>Blusa</td><td>12/12/2018</td>
-								<td>$200.00</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Fedex</td>
-								<td>Samantha</td>
-								<td>Maquillaje</td><td>13/06/2018</td>
-								<td>$103.00</td>
-							</tr><tr>
-								<td>3</td>
-								<td>Fedex</td>
-								<td>Aylin</td>
-								<td>Desmaquillante</td>
-								<td>03/05/2018</td>
-								<td>$250.00</td>
-							</tr><tr>
-								<td>4</td>
-								<td>Fedex</td>
-								<td>Fernanda</td><td>Labial</td><td>06/04/2018</td>
-								<td>$150.00</td>
-							</tr>
+							<?php 
+									$sql = "SELECT * FROM envios";
+									$result = mysqli_query($conn, $sql);
+									while($row = mysqli_fetch_assoc($result)){
+										?>
+										<tr>
+											<td><?= $row['agencia']; ?></td>
+											<td><?= $row['cliente']; ?></td>
+											<td><?= $row['producto']; ?></td>
+											<td><?= $row['cantidad']; ?></td>
+											<td><?= $row['fecha']; ?></td>
+											<td>$ <?= $row['monto']; ?></td>
+										</tr>
+										<?php
+									}
+							 ?>
 						</tbody>
 					  </table>
 					  <div style="text-align: right;">
-					  	<a href="agregar-envio.php" type="button" class="btn btn-success" >Agregar</a>
+					  	<a href="agregar-envio.php" type="button" class="add btn btn-success" >Agregar</a>
 					</div>
 					</div>
 						

@@ -133,13 +133,15 @@
 				
 					<div class="chart">
 						<h2>Nuevo Envio</h2><br>
-						<form style="margin-left: 8%; margin-right: 40%;">
+						<form style="margin-left: 8%; margin-right: 40%;" method="POST" action="registros/add_envio.php">
 							<div class="form-group"><label>Agencia de Envios:  </label><select class="form-control" id="sel1">
 								<option>Fedex</option>
 								<option>DHL</option>
 							  </select></div>
-							  <div class="form-group"><label>Cliente: </label><input class="form-control" type="text" ></div>
-							<div class="form-group"><label>Seleccione un producto:  </label><select class="form-control" id="product">
+							  <div class="form-group"><label>Cliente: </label><input class="form-control" type="text" name="cliente"></div>
+							  <input type="hidden" name="product" value="" id="prod">
+							<input type="hidden" name="idp" value="" id="idp">
+							<div class="form-group"><label>Seleccione un producto:  </label><select class="form-control" id="product" name="product">
 								
 								<option value="none">- Seleccionar -</option>
 								<?php 
@@ -163,12 +165,13 @@
 								 ?>
 								
 							  </select></div>
+							  <div class="form-group"><label>Cantidad: </label><input name="cant" class="form-control" id="cant" name="cant" />
 							
-							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker"  />
+							<div class="form-group"><label>Fecha: </label><input class="form-control" id="datepicker" name="fecha" />
                         </div>
-							<div class="form-group"><label>Monto: </label><input class="form-control" type="text" disabled></div>
+							<div class="form-group"><label>Monto: </label><input class="form-control" type="text" id="monto" name="monto"></div>
 							<div style="text-align: right;">
-							<button type="button" class="btn btn-success disabled">Guardar</button>
+							<button type="submit" class="btn btn-success">Guardar</button>
 							<br><br>
 						</div>
 						</form>
@@ -181,6 +184,13 @@
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
+
+
+        $('#product').change(function(){
+			$('#monto').val($('#product option:selected').attr('cost'));
+			$('#idp').val($('#product option:selected').attr('idp'));
+			$('#prod').val($('#product option:selected').text());
+		});
     </script>
 </body>
 </html>

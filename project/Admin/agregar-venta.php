@@ -207,7 +207,6 @@
 			$('#monto').val($('#product option:selected').attr('cost'));
 			$('#idp').val($('#product option:selected').attr('idp'));
 			$('#prod').val($('#product option:selected').text());
-			alert($('#idp').val());
 		});
 
 		</script>
